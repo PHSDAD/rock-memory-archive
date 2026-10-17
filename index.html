@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f2e7cd">
+  <meta name="description" content="一條曲線，33 個搖滾瞬間。沿著復古演出海報與歷史照片，重返 1938–2025 年的聲音記憶。">
+  <title>搖滾記憶 — LOUD NEVER FADES</title>
+  <link rel="icon" href="assets/favicon.svg?v=6" type="image/svg+xml"><link rel="stylesheet" href="styles.css?v=6"><link rel="stylesheet" href="lighting.css?v=6">
+  <script defer src="events.js"></script><script defer src="photos.js?v=6"></script><script defer src="app.js?v=6"></script><script defer src="lighting.js?v=6"></script>
+</head>
+<body id="top">
+  <div class="stage-atmosphere" aria-hidden="true"><div class="stage-glow stage-glow-warm"></div><div class="stage-glow stage-glow-cool"></div><div class="stage-beam"></div><div class="amp-grid"></div><div class="stage-wave"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><canvas id="light-dust"></canvas></div>
+  <a class="skip-link" href="#timeline">跳至搖滾時間軸</a>
+  <header class="site-header">
+    <a class="wordmark" href="#top" aria-label="搖滾記憶，回到起點"><span class="brand-disc" aria-hidden="true"></span><span>搖滾記憶<small>ROCK MEMORY</small></span></a>
+    <div class="header-note"><span class="live-dot"></span><span class="header-archive">AN ARCHIVE IN MOTION</span><div class="time-marker" id="time-marker" hidden aria-label="目前歷史年份"><span>ON THE RECORD</span><output id="current-year">1938</output><small id="current-index">01 / 33</small></div></div>
+    <div class="header-controls"><button id="tour-start" data-start-tour aria-pressed="false"><span class="tour-button-icon" aria-hidden="true">▶</span><span class="tour-button-label">自動播放</span></button><small id="tour-status">每站 5 秒 · 慢速帶讀</small></div>
+  </header>
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <p class="hero-kicker"><span>ROCK MEMORY ARCHIVE / 搖滾記憶檔案</span><span>1938—2025</span></p>
+      <div class="hero-type"><h1 id="hero-title">搖滾<span>記憶</span></h1><div class="hero-english">ROCK <em>&amp; ROLL</em><small>A HISTORY IN 33 MOMENTS</small></div></div>
+      <figure class="hero-art"><div class="hero-backdrop"><img src="assets/ramones.jpg" alt="Ramones 於 1976 年在 Toronto 演出的真實歷史照片" width="864" height="576" fetchpriority="high"></div><div class="print-seal"><b>33</b><span>歷史瞬間</span></div><figcaption class="hero-photo-credit">RAMONES / TORONTO, 1976<br><a id="hero-credit" href="https://commons.wikimedia.org/wiki/File:Ramones_Toronto_1976.jpg" target="_blank" rel="noopener">照片署名與授權 ↗</a></figcaption></figure>
+      <div class="hero-bottom"><div class="hero-copy"><p class="hero-lead">有些聲音，<br>從來沒有離開現場。</p><p class="hero-description">從第一聲失真，到最後一次合唱。<br>一條曲線，把我們帶回那些改變一切的瞬間。</p><button class="begin-button" id="hero-tour" data-start-tour aria-pressed="false"><span class="tour-button-label">播放這段歷史</span><span class="tour-button-icon" aria-hidden="true">↘</span></button><a class="hero-manual" href="#timeline">自己走走 <span aria-hidden="true">↓</span></a><p class="tour-instructions">每站停留 5 秒，再慢慢讀過故事。<br>點擊或滾動，隨時接管。</p></div></div>
+      <div class="hero-runline" aria-hidden="true"><span>ONE CONTINUOUS LINE.</span><span>FROM 1938 TO 2025.</span></div>
+    </section>
+    <section id="timeline" class="timeline" aria-label="按時間串聯的搖滾歷史">
+      <div class="timeline-intro"><p class="eyebrow">FOLLOW THE FEEDBACK</p><h2>跟著電流，<br>回到故事發生的地方。</h2><p>每一個圓點，都是一次改變方向的瞬間。<br>點開故事、放大照片，或讓時間自己前進。</p></div>
+      <div id="track" class="track"><svg id="curve" class="curve" aria-hidden="true"><path id="curve-base"/><path id="curve-progress"/></svg><div id="events"></div><button id="playhead" class="playhead" aria-label="拖曳穿越時間；上下方向鍵切換事件" title="上下拖曳，穿越時間"><span></span><span class="playhead-hint">DRAG THROUGH TIME</span></button></div>
+      <div class="timeline-end"><span class="end-dot" aria-hidden="true"></span><p class="eyebrow">THE LAST NOTE ISN'T THE END</p><h2>聲音還在。<br>故事，也還在。</h2><p>下一次拿起吉他，下一次站進人群。<br>搖滾的下一段記憶，也許就是你。</p><button class="replay" data-start-tour data-from-start="true" aria-pressed="false"><span class="tour-button-label">重新播放這段歷史</span><span aria-hidden="true">↺</span></button></div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="footer-title">搖滾記憶<span>LOUD NEVER FADES / 1938—2025</span></div><p>首輯選錄 33 個節點，以歐美與華語場景為起點。<br>曲線間距服務閱讀節奏，並非等比例年份。這是一份持續擴充的記憶。</p><div class="footer-meta"><span>史料整理 · 2026.10</span><span>照片年代、署名與史料來源皆可在事件內查看</span><a href="#top">回到起點 ↑</a></div></footer>
+  <dialog id="photo-viewer" class="photo-viewer" aria-label="歷史照片放大檢視"><button class="photo-close" aria-label="關閉照片">關閉 ×</button><div class="photo-viewer-inner"><img id="viewer-image" alt=""><p id="viewer-caption"></p></div></dialog>
+  <div id="announcement" class="sr-only" role="status"></div>
+  <noscript><p class="noscript">開啟 JavaScript 即可探索曲線時間軸，或<a href="history.txt">閱讀歷史純文字版本</a>。</p></noscript>
+</body></html>
