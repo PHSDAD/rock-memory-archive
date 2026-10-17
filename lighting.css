@@ -1,0 +1,33 @@
+/* Two-colour gig-poster paper: quiet ink, record grooves and registration marks. */
+body{isolation:isolate}
+main,.site-footer{position:relative;z-index:1}
+.stage-atmosphere{--print-x:0px;--print-y:0px;--print-roll:0deg;--print-scroll:0px;position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none;contain:strict;background:#f2e7cd}
+.stage-atmosphere:before{content:'';position:absolute;inset:0;z-index:4;opacity:.48;background-image:repeating-linear-gradient(2deg,transparent 0 71px,#182b4005 72px,transparent 73px 129px),repeating-linear-gradient(91deg,transparent 0 113px,#182b4004 114px,transparent 115px 171px);pointer-events:none}
+.stage-atmosphere:after{content:'';position:absolute;inset:0;z-index:5;pointer-events:none;background:linear-gradient(90deg,transparent 0,#f2e7cd80 20%,#f2e7cde0 43%,#f2e7cde0 57%,#f2e7cd70 80%,transparent 100%)}
+.stage-glow{position:absolute;border-radius:50%;mix-blend-mode:multiply}
+.stage-glow-warm{z-index:0;width:83vmax;height:83vmax;left:-57vmax;top:-21vmax;background:repeating-radial-gradient(circle,transparent 0 17px,#d9432c1d 17px 18px,transparent 18px 27px),conic-gradient(from 40deg,transparent 0 236deg,#d9432c09 237deg 264deg,transparent 265deg 360deg);animation:print-record-turn 105s ease-in-out infinite alternate;will-change:transform}
+.stage-glow-warm:before{content:'';position:absolute;inset:30%;border:1px solid #d9432c2e;border-radius:50%;box-shadow:0 0 0 14px #d9432c05,0 0 0 28px #d9432c04}
+.stage-glow-warm:after{content:'';position:absolute;top:18%;left:62%;width:10%;height:1px;background:#d9432c29;transform:rotate(-38deg);transform-origin:left center;box-shadow:0 7px 0 #d9432c10}
+.stage-glow-cool{z-index:0;width:65vmax;height:65vmax;right:-48vmax;top:22vh;background-image:repeating-radial-gradient(circle,transparent 0 23px,#182b401c 23px 24px,transparent 24px 35px);transform:translate3d(calc(var(--print-x) * -.7),calc(var(--print-y) * -.7 - var(--print-scroll)),0)}
+.stage-glow-cool:before{content:'';position:absolute;inset:8%;border:1px dashed #182b401b;border-radius:50%;animation:print-groove-turn 140s linear infinite;will-change:transform}
+.stage-beam{position:absolute;inset:0;z-index:1;transform:translate3d(calc(var(--print-x) * -.35),calc(var(--print-y) * -.3 + var(--print-scroll) * .4),0)}
+.stage-beam:before{content:'';position:absolute;left:3.4%;top:16%;width:37px;height:37px;opacity:.2;background:linear-gradient(#d9432c,#d9432c) center/100% 1px no-repeat,linear-gradient(#d9432c,#d9432c) center/1px 100% no-repeat}
+.stage-beam:after{content:'';position:absolute;right:2.9%;top:38%;width:34px;height:34px;opacity:.16;border:1px solid #182b40;border-radius:50%;background:linear-gradient(#182b40,#182b40) center/100% 1px no-repeat,linear-gradient(#182b40,#182b40) center/1px 100% no-repeat}
+.amp-grid{position:absolute;z-index:2;right:-10%;bottom:-11%;width:43vw;height:48vh;opacity:.38;background-image:radial-gradient(circle,#182b4033 1px,transparent 1.25px);background-size:7px 7px;clip-path:polygon(35% 0,100% 18%,100% 100%,0 100%);transform:rotate(-10deg) translate3d(0,calc(var(--print-scroll) * -.3),0);mask-image:linear-gradient(135deg,transparent,#000 42%);-webkit-mask-image:linear-gradient(135deg,transparent,#000 42%)}
+.stage-wave{position:absolute;z-index:3;right:5vw;bottom:5vh;width:157px;height:45px;display:flex;align-items:center;justify-content:space-between;gap:5px;opacity:.15;transform:translate3d(calc(var(--print-x) * -.3),calc(var(--print-y) * -.25),0) rotate(-12deg);border-top:1px solid #182b40;border-bottom:1px solid #182b40;padding:4px 2px}
+.stage-wave span{display:block;width:2px;height:var(--ink-height,78%);background:#182b40;flex-shrink:0}
+.stage-wave span:nth-child(4n+1){--ink-height:45%}
+.stage-wave span:nth-child(4n+2){--ink-height:90%}
+.stage-wave span:nth-child(4n+3){--ink-height:66%}
+.stage-wave span:nth-child(4n){--ink-height:100%}
+.stage-wave span:nth-child(5n){background:#d9432c;width:3px}
+#light-dust{position:absolute;inset:0;z-index:4;width:100%;height:100%;opacity:.6}
+.event.is-active .event-node:before{box-shadow:0 0 0 4px #d9432c12,0 0 0 8px #d9432c07;animation:print-node-register 7s ease-in-out infinite}
+.event.tour-arrival .event-node:before{animation:print-node-arrival 1.8s ease-out 1,print-node-register 7s 1.8s ease-in-out infinite}
+@keyframes print-record-turn{from{transform:translate3d(calc(-1vw + var(--print-x)),calc(var(--print-y) + var(--print-scroll)),0) rotate(calc(-6deg + var(--print-roll)))}to{transform:translate3d(calc(2vw + var(--print-x)),calc(2vh + var(--print-y) + var(--print-scroll)),0) rotate(calc(22deg + var(--print-roll)))}}
+@keyframes print-groove-turn{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+@keyframes print-node-register{0%,100%{box-shadow:0 0 0 3px #d9432c12,0 0 0 7px #d9432c06}50%{box-shadow:0 0 0 5px #d9432c1c,0 0 0 9px #d9432c0a}}
+@keyframes print-node-arrival{0%{box-shadow:0 0 0 1px #d9432c40}100%{box-shadow:0 0 0 17px #d9432c00}}
+html.stage-page-hidden .stage-atmosphere *,html.stage-page-hidden .stage-atmosphere *:before,html.stage-page-hidden .stage-atmosphere *:after,html.stage-page-hidden .event-node:before{animation-play-state:paused!important}
+@media(max-width:650px){.stage-glow-warm{width:115vmax;height:115vmax;left:-102vmax;top:-25vmax;opacity:.75}.stage-glow-cool{width:84vmax;height:84vmax;right:-75vmax;top:32vh;opacity:.7}.stage-glow-cool:before{animation:none}.stage-beam:before{left:3%;top:17%;width:21px;height:21px}.stage-beam:after{right:1.5%;width:20px;height:20px;opacity:.11}.amp-grid{width:47vw;height:35vh;right:-14%;opacity:.25;background-size:9px 9px}.stage-wave{right:4vw;bottom:4vh;width:98px;height:32px;gap:3px;opacity:.11}.stage-wave span{width:1px}.stage-wave span:nth-child(5n){width:2px}#light-dust{opacity:.48}}
+@media(prefers-reduced-motion:reduce){.stage-atmosphere *,.stage-atmosphere *:before,.stage-atmosphere *:after,.event.is-active .event-node:before,.event.tour-arrival .event-node:before{animation:none!important;will-change:auto}.stage-glow-warm{transform:rotate(-6deg)}.stage-glow-cool,.stage-beam{transform:none}.amp-grid{transform:rotate(-10deg)}.stage-wave{transform:rotate(-12deg)}}
